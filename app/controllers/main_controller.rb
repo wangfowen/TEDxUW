@@ -6,6 +6,33 @@ class MainController < ApplicationController
   def index
   end
 
+  def about
+  end
+
+  def blog
+  end
+
+  def faq
+  end
+
+  def organization
+  end
+
+  def partners
+  end
+
+  def press
+  end
+
+  def speakers
+  end
+
+  def videos
+  end
+
+  def team
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_main

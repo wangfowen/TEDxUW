@@ -7,7 +7,40 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<section class="header">
+  <ul class="nav">
+    <li><a class="link" href="#">Event Info</a><ul class="dropdown">
+      <li><a class="link" href="/about">About</a></li>
+      <li><a class="link" href="/speakers">Speakers</a></li>
+      <li><a class="link" href="/organization">Organization</a></li>
+      <li><a class="link" href="/team">Team</a></li>
+      <li><a class="link" href="/partners">Partners</a></li>
+    </ul></li>
+    <li><a class="link" href="/videos">Videos</a></li>
+    <li><a class="link" href="/press">Press</a></li>
+    <li><a class="link" href="/">TEDxUW</a></li>
+    <li><a class="link" href="/blog">Blog</a></li>
+    <li><a class="link" href="/faq">FAQ</a></li>
+    <li><a class="link" href="#">Past Events</a><ul class="dropdown">
+      <li><a class="link" href="http://2011.tedxuw.com/">2011</a></li>
+      <li><a class="link" href="http://2012.tedxuw.com/">2012</a></li>
+    </ul></li>
+</ul>
+</section>
+
 <%= yield %>
+
+<section class="footer">
+  <div class="social-media">
+    <a href="/">
+    </a>
+    <a href="/">
+    </a>
+    <a href="/">
+    </a>
+  </div>
+  <a href="/contact">Contact</a>
+</section>
 
 </body>
 </html>
