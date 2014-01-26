@@ -139,7 +139,15 @@ a, a:active, a:visited {
   .main {
     max-width: 800px;
     margin: 0px auto;
-    padding-top: 20px;
+    padding: 20px 10px 0;
+  }
+
+  a {
+    border-bottom: 1px solid $black;
+  }
+
+  li {
+    padding-bottom: 5px;
   }
 
   h1.title {
@@ -150,15 +158,22 @@ a, a:active, a:visited {
 
   h1 {
     font-size: 36px;
+    padding-bottom: 10px;
   }
 
   h2 {
     font-size: 26px;
+    padding-bottom: 10px;
   }
 
   .set {
-    padding: 20px;
     border-top: $black 1px solid;
+    padding: 20px 0;
+
+    img {
+      float: right;
+      margin: 5px;
+    }
   }
 
   .set:first-child {
@@ -167,6 +182,10 @@ a, a:active, a:visited {
 
   .set:nth-child(even) {
     background: $gray;
+
+    img {
+      float: left;
+    }
   }
 
   .banner {
