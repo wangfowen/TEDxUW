@@ -9,6 +9,7 @@ Tedxuw::Application.routes.draw do
   get "/speakers", to: "main#speakers"
   get "/videos", to: "main#videos"
   get "/team", to: "main#team"
+  get "/contact", to: "main#contact"
 
   comfy_route :cms_admin, :path => '/admin'
 
