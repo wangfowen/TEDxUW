@@ -12,7 +12,7 @@
  *= require_tree .
  */
 
-$red: #FF272A;
+$red: #FD2520;
 $black: #111;
 $white: #fff;
 $off-white: #F9FAF5;
@@ -21,6 +21,7 @@ $gray: #F5F5F0;
 $homizio: Homizio, serif;
 
 $header-height: 100px;
+$footer-height: 45px;
 
 @font-face {
   font-family: Homizio;
@@ -54,8 +55,9 @@ a, a:active, a:visited {
   display: block;
   width: 100%;
   background: $white;
-  position: relative;
-  z-index: 2;
+  position: fixed;
+  top: 0;
+  z-index: 5;
 
   .nav, .dropdown, .min-menu {
     list-style: none;
@@ -98,6 +100,7 @@ a, a:active, a:visited {
 
     .main-link {
       width: 25%;
+      text-align: center;
 
       img {
         height: 50px;
@@ -125,10 +128,74 @@ a, a:active, a:visited {
   }
 }
 
-.main {
+.wrapper {
   z-index: 1;
   position: relative;
-  padding-bottom: 45px;
+  padding: $header-height 0 $footer-height+20;
+  font-size: 17px;
+  line-height: 1.5em;
+  width: 100%;
+
+  .main {
+    max-width: 800px;
+    margin: 0px auto;
+    padding-top: 20px;
+  }
+
+  h1.title {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 0 40px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .set {
+    padding: 20px;
+    border-top: $black 1px solid;
+  }
+
+  .set:first-child {
+    border-top: none;
+  }
+
+  .set:nth-child(even) {
+    background: $gray;
+  }
+
+  .banner {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    p {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .faq {
+    .question {
+      font-style: italic;
+      font-weight: bold;
+    }
+  }
+
+  .blog {
+    .info {
+      font-style: italic;
+      font-size: 15px;
+      margin: 5px 0 10px;
+    }
+  }
 }
 
 .footer {
@@ -201,6 +268,7 @@ a, a:active, a:visited {
 
 @media screen and (max-width: 800px) {
   .header {
+    position: relative;
     .nav .link {
       display: none;
     }
@@ -222,5 +290,9 @@ a, a:active, a:visited {
         border-bottom: 1px solid $gray;
       }
     }
+  }
+
+  .wrapper {
+    padding: 0 0 $footer-height+20;
   }
 }

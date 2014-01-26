@@ -1,5 +1,12 @@
-%h1 Directors
-.directors= cms_snippet_content('directors')
+.banner= cms_snippet_content('team-banner')
 
-%h1 Other Team Members
-.team= cms_snippet_content('team')
+.main
+  %h1.title Our Team
+
+  %h1 Directors
+
+  .directors= cms_snippet_content('directors')
+
+  %h1 Other Team Members
+
+  .team= cms_snippet_content('team')

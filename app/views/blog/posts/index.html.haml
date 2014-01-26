@@ -1,13 +1,16 @@
-%h1 Blog Posts
+.banner= cms_snippet_content('blog-banner')
 
-- @posts.each do |post|
+.main
+  %h1.title Blog
 
-  %h1= link_to post.title, blog_post_path(@cms_site.path, "", post.slug)
-  .author
-    = post.author
-  .date
-    = post.published_at.to_s(:db)
-  .content
-    = post.content.html_safe
+  .blog
+    - @posts.each do |post|
 
-= paginate @posts
+      .set
+        %h2= link_to post.title, blog_post_path(@cms_site.path, "", post.slug)
+        .info
+          = "by " + post.author + " on " + post.published_at.strftime("%Y-%m-%d")
+        .content
+          = post.content.html_safe
+
+    = paginate @posts

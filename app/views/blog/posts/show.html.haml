@@ -1,18 +1,17 @@
-%h1 Blog Post
+.blog.main
+  %h1= @post.title
 
-%h1= @post.title
+  .info
+    = "by " + @post.author + " on " + @post.published_at.strftime("%Y-%m-%d")
+  .content
+    = @post.content.html_safe
 
-.author
-  = @post.author
-.date
-  = @post.published_at.to_s(:db)
-.content
-  = @post.content.html_safe
+-#
+  .comments
+    - @post.comments.published.each do |comment|
+      .comment
+        .author= comment.author
+        .content= comment.content
 
-.comments
-  - @post.comments.published.each do |comment|
-    .comment
-      .author= comment.author
-      .content= comment.content
+    = render :partial => 'blog/comments/form'
 
-  = render :partial => 'blog/comments/form'
