@@ -9,9 +9,6 @@ class MainController < ApplicationController
   def about
   end
 
-  def blog
-  end
-
   def faq
   end
 

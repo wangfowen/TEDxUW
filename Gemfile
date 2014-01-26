@@ -34,6 +34,7 @@ group :doc do
 end
 
 gem 'comfortable_mexican_sofa'
+gem 'comfy_blog'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

@@ -56,6 +56,8 @@ GEM
       paperclip (>= 3.4.0)
       rails (~> 4.0)
       sass-rails (>= 3.1.0)
+    comfy_blog (1.1.1)
+      comfortable_mexican_sofa (>= 1.11.0)
     erubis (2.7.0)
     execjs (2.0.2)
     formatted_form (2.1.2)
@@ -158,6 +160,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   comfortable_mexican_sofa
+  comfy_blog
   jbuilder (~> 1.2)
   jquery-rails
   pg

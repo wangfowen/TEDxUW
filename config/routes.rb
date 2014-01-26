@@ -1,7 +1,9 @@
 Tedxuw::Application.routes.draw do
+  comfy_route :blog_admin, :path => '/admin'
+  comfy_route :blog, :path => '/blog'
+
   root 'main#index'
   get "/about", to: "main#about"
-  get "/blog", to: "main#blog"
   get "/faq", to: "main#faq"
   get "/organization", to: "main#organization"
   get "/partners", to: "main#partners"
