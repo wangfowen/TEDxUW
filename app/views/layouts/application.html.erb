@@ -14,7 +14,7 @@
 <body>
 <section class="header">
   <ul class="nav">
-    <li class="link"><a href="#">Event</a><ul class="dropdown">
+    <li class="link"><a class="drop-link" href="#">Event</a><ul class="dropdown">
       <li class="link"><a href="/about">About</a></li>
       <li class="link"><a href="/speakers">Speakers</a></li>
       <li class="link"><a href="/organization">Organization</a></li>
@@ -23,17 +23,19 @@
     </ul></li>
     <li class="link"><a href="/videos">Videos</a></li>
     <li class="link"><a href="/press">Press</a></li>
-    <li class="main-link"><a href="/"><img src="/assets/logo.png"></a></li>
+    <li class="main-link"><a href="/"><%= image_tag "logo.png" %></a></li>
     <li class="link"><a href="/blog">Blog</a></li>
     <li class="link"><a href="/faq">FAQ</a></li>
-    <li class="link"><a href="#">Past Sites</a><ul class="dropdown">
+    <li class="link"><a class="drop-link" href="#">Past Sites</a><ul class="dropdown">
       <li class="link"><a href="http://2011.tedxuw.com/" target="_blank">2011</a></li>
       <li class="link"><a href="http://2012.tedxuw.com/" target="_blank">2012</a></li>
     </ul></li>
 </ul>
 </section>
 
-<%= yield %>
+<section class="main">
+  <%= yield %>
+</section>
 
 <section class="footer">
   <ul class="share">
@@ -43,6 +45,25 @@
   </ul>
   <!--<a href="/contact">Contact Form</a>-->
 </section>
+
+<script>
+$(function() {
+  var $dropLink = $('.drop-link');
+
+  $dropLink.click(function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    $dropdown = $(e.target).siblings('.dropdown');
+    $dropdown.toggle();
+
+  });
+
+  $('body').click(function() {
+    $('.dropdown').hide();
+  });
+});
+</script>
 
 <script>
     var _gaq=[['_setAccount','UA-33764672-1'],['_trackPageview']];
