@@ -13,6 +13,19 @@
 </head>
 <body>
 <section class="header">
+  <ul class="min-menu">
+    <li class="link"><a href="/about">About</a></li>
+    <li class="link"><a href="/speakers">Speakers</a></li>
+    <li class="link"><a href="/organization">Organization</a></li>
+    <li class="link"><a href="/team">Team</a></li>
+    <li class="link"><a href="/partners">Partners</a></li>
+    <li class="link"><a href="/videos">Videos</a></li>
+    <li class="link"><a href="/press">Press</a></li>
+    <li class="link"><a href="/blog">Blog</a></li>
+    <li class="link"><a href="/faq">FAQ</a></li>
+    <li class="link"><a href="http://2011.tedxuw.com/" target="_blank">2011 Site</a></li>
+    <li class="link"><a href="http://2012.tedxuw.com/" target="_blank">2012 Site</a></li>
+  </ul>
   <ul class="nav">
     <li class="link"><a class="drop-link" href="#">Event</a><ul class="dropdown">
       <li class="link"><a href="/about">About</a></li>
@@ -30,6 +43,7 @@
       <li class="link"><a href="http://2011.tedxuw.com/" target="_blank">2011</a></li>
       <li class="link"><a href="http://2012.tedxuw.com/" target="_blank">2012</a></li>
     </ul></li>
+    <li class="link" id="min-toggle"><a href="#">Menu</a></li>
 </ul>
 </section>
 
@@ -49,18 +63,34 @@
 <script>
 $(function() {
   var $dropLink = $('.drop-link');
+  var $minMenu = $('.min-menu');
 
   $dropLink.click(function(e) {
     e.preventDefault();
     e.stopPropagation();
 
-    $dropdown = $(e.target).siblings('.dropdown');
+    var $dropdown = $(e.target).siblings('.dropdown');
     $dropdown.toggle();
 
   });
 
   $('body').click(function() {
     $('.dropdown').hide();
+  });
+
+  $('.link').click(function(e) {
+    var $a = $(e.target).children('a');
+
+    if ($a.length > 0) {
+      $a[0].click();
+    }
+  });
+
+  $('#min-toggle').click(function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    $minMenu.toggle();
   });
 });
 </script>
