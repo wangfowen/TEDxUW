@@ -33,7 +33,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'comfortable_mexican_sofa', :git => 'git@github.com:wangfowen/comfortable-mexican-sofa.git'
+gem 'comfortable_mexican_sofa'
 gem 'comfy_blog'
 
 # Use ActiveModel has_secure_password
