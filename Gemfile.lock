@@ -1,3 +1,21 @@
+GIT
+  remote: git@github.com:wangfowen/comfortable-mexican-sofa.git
+  revision: b5a7835d1a3671dd5f0ec35ae6c8de360fd26f69
+  specs:
+    comfortable_mexican_sofa (1.11.1)
+      active_link_to (>= 1.0.0)
+      codemirror-rails (>= 3.0.0)
+      coffee-rails (>= 3.1.0)
+      formatted_form (>= 2.1.0)
+      haml-rails (>= 0.3.0)
+      jquery-rails (>= 3.0.0)
+      jquery-ui-rails (>= 4.0.0)
+      kaminari (>= 0.14.0)
+      kramdown (>= 1.0.0)
+      paperclip (>= 3.4.0)
+      rails (~> 4.0)
+      sass-rails (>= 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -29,12 +47,16 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    aws-sdk (1.32.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     builder (3.1.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.3)
       climate_control (>= 0.0.3, < 1.0)
-    codemirror-rails (3.16)
+    codemirror-rails (3.21)
       railties (>= 3.0, < 5)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -43,19 +65,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    comfortable_mexican_sofa (1.11.1)
-      active_link_to (>= 1.0.0)
-      codemirror-rails (>= 3.0.0)
-      coffee-rails (>= 3.1.0)
-      formatted_form (>= 2.1.0)
-      haml-rails (>= 0.3.0)
-      jquery-rails (>= 3.0.0)
-      jquery-ui-rails (>= 4.0.0)
-      kaminari (>= 0.14.0)
-      kramdown (>= 1.0.0)
-      paperclip (>= 3.4.0)
-      rails (~> 4.0)
-      sass-rails (>= 3.1.0)
     comfy_blog (1.1.1)
       comfortable_mexican_sofa (>= 1.11.0)
     erubis (2.7.0)
@@ -89,8 +98,11 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.5.2)
     minitest (4.7.5)
     multi_json (1.8.4)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     paperclip (3.5.3)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -153,13 +165,15 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    uuidtools (2.1.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   coffee-rails (~> 4.0.0)
-  comfortable_mexican_sofa
+  comfortable_mexican_sofa!
   comfy_blog
   jbuilder (~> 1.2)
   jquery-rails

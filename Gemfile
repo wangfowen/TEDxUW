@@ -33,7 +33,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'comfortable_mexican_sofa'
+gem 'comfortable_mexican_sofa', :git => 'git@github.com:wangfowen/comfortable-mexican-sofa.git'
 gem 'comfy_blog'
 
 # Use ActiveModel has_secure_password
@@ -43,6 +43,8 @@ gem 'comfy_blog'
 gem 'unicorn'
 
 gem 'rails_serve_static_assets'
+
+gem 'aws-sdk'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development

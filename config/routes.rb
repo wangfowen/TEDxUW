@@ -7,7 +7,6 @@ Tedxuw::Application.routes.draw do
   get "/faq", to: "main#faq"
   get "/organization", to: "main#organization"
   get "/partners", to: "main#partners"
-  get "/press", to: "main#press"
   get "/speakers", to: "main#speakers"
   get "/videos", to: "main#videos"
   get "/team", to: "main#team"

@@ -63,6 +63,14 @@ a, a:active, a:visited {
     list-style: none;
   }
 
+  .drop-link:after {
+    position: absolute;
+    top: 7px;
+    content: "▼";
+    font-size: 7px;
+    padding-left: 3px;
+  }
+
   .min-menu {
     display: none;
   }
@@ -196,11 +204,15 @@ a, a:active, a:visited {
 
     img {
       width: 100%;
+      opacity: .8;
     }
 
     p {
       position: absolute;
-      top: 0;
+      top: 40%;
+      text-align: center;
+      width: 100%;
+      font-size: 50px;
     }
   }
 

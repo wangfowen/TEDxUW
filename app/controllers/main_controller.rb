@@ -18,9 +18,6 @@ class MainController < ApplicationController
   def partners
   end
 
-  def press
-  end
-
   def speakers
   end
 
