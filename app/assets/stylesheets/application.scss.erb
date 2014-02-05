@@ -255,6 +255,15 @@ a, a:active, a:visited {
       display: inline-block;
     }
 
+    .linkedin {
+      background: url(<%= asset_path("linkedin.png") %>) no-repeat;
+      display: block;
+      margin: 0 3px;
+      height: 26px;
+      width: 26px;
+      background-position: 0px 0px;
+    }
+
     .sprite {
       background: url(<%= asset_path("cs.png") %>) no-repeat;
       display: block;
@@ -262,7 +271,7 @@ a, a:active, a:visited {
       margin: 0 3px;
     }
 
-    .sprite:hover, .sprite:active {
+    .sprite:hover, .sprite:active, .linkedin:hover, .linkedin:active {
       opacity: .7;
     }
 
