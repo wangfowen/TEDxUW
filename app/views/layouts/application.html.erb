@@ -27,7 +27,7 @@
     <li class="link"><a href="http://2012.tedxuw.com/" target="_blank">2012 Site</a></li>
   </ul>
   <ul class="nav">
-    <li class="link"><a class="drop-link" href="#">Event</a><ul class="dropdown">
+    <li class="link drop-link"><a href="#">Event</a><ul class="dropdown">
       <li class="link"><a href="/about">About</a></li>
       <li class="link"><a href="/organization">Organization</a></li>
       <li class="link"><a href="/team">Team</a></li>
@@ -37,8 +37,8 @@
     <li class="link"><a href="/videos">Videos</a></li>
     <li class="main-link"><a href="/"><%= image_tag "logo.png" %></a></li>
     <li class="link"><a href="/blog">Blog</a></li>
-    <li class="link"><a href="/faq">FAQ</a></li>
-    <li class="link"><a class="drop-link" href="#">Past Sites</a><ul class="dropdown">
+    <li class="link"><a target="_blank" href="http://apply.tedxuw.com">Apply</a></li>
+    <li class="link drop-link"><a href="#">Past Sites</a><ul class="dropdown">
       <li class="link"><a href="http://2011.tedxuw.com/" target="_blank">2011</a></li>
       <li class="link"><a href="http://2012.tedxuw.com/" target="_blank">2012</a></li>
     </ul></li>
@@ -62,19 +62,45 @@
 <script>
 $(function() {
   var $dropLink = $('.drop-link');
-  var $minMenu = $('.min-menu');
+  var $dropdowns = $('.dropdown');
+  var $minMenu = $('.header');
+  var clickTime;
+  var prevTime = new Date();
 
+  //very hacky tricks to get clicking the whole button to open the dropdown. there's probably a better way
   $dropLink.click(function(e) {
     e.preventDefault();
     e.stopPropagation();
 
-    var $dropdown = $(e.target).siblings('.dropdown');
-    $dropdown.toggle();
+    var attr = $(e.target).attr("href");
+    var target = $(e.target).attr("target");
 
+    if (attr !== undefined && attr !== "#") {
+
+      if (target !== undefined) {
+        window.open(attr, '_blank');
+        $dropdowns.removeClass("show");
+      } else {
+        window.location = attr;
+      }
+    }
+
+    var $dropdown = $(e.target).children('.dropdown');
+    clickTime = new Date() - prevTime;
+    if ($dropdown.length === 0 && clickTime > 500) {
+      $dropdown = $(e.target).siblings('.dropdown');
+    }
+    if ($dropdown.hasClass("show")) {
+      $dropdown.removeClass("show");
+    } else {
+      $dropdown.addClass("show");
+    }
+
+    prevTime = new Date();
   });
 
   $('body').click(function() {
-    $('.dropdown').hide();
+    $dropdowns.removeClass("show");
   });
 
   $('.link').click(function(e) {
@@ -89,7 +115,17 @@ $(function() {
     e.preventDefault();
     e.stopPropagation();
 
-    $minMenu.toggle();
+    clickTime = new Date() - prevTime;
+
+    if (clickTime > 500) {
+      if ($minMenu.hasClass("show")) {
+        $minMenu.removeClass("show");
+      } else {
+        $minMenu.addClass("show");
+      }
+    }
+
+    prevTime = new Date();
   });
 });
 </script>

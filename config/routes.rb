@@ -4,7 +4,6 @@ Tedxuw::Application.routes.draw do
 
   root 'main#index'
   get "/about", to: "main#about"
-  get "/faq", to: "main#faq"
   get "/organization", to: "main#organization"
   get "/partners", to: "main#partners"
   get "/speakers", to: "main#speakers"
