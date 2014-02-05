@@ -88,7 +88,7 @@ $(function() {
 
     var $dropdown = $(e.target).children('.dropdown');
     clickTime = new Date() - prevTime;
-    if ($dropdown.length === 0 && clickTime > 500) {
+    if ($dropdown.length === 0 && clickTime > 200) {
       $dropdown = $(e.target).siblings('.dropdown');
     }
     if ($dropdown.hasClass("show")) {
@@ -118,7 +118,7 @@ $(function() {
 
     clickTime = new Date() - prevTime;
 
-    if (clickTime > 500) {
+    if (clickTime > 200) {
       if ($minMenu.hasClass("show")) {
         $minMenu.removeClass("show");
       } else {
