@@ -21,18 +21,11 @@ $gray: #F5F5F0;
 $header-height: 100px;
 $footer-height: 45px;
 
-$homizio: Homizio, serif;
+$helvetica: "Helvetica Neue", Helvetica, Regencie, Arial, sans-serif;
 
 @font-face {
-  font-family: Homizio;
-  src: url('/HomizioNovaRegular.otf');
-}
-
-$montserrat: Montserrat, serif;
-
-@font-face {
-  font-family: Montserrat;
-  src: url('/Montserrat-Regular.ttf');
+  font-family: Regencie;
+  src: url('/RegencieLight.ttf');
 }
 
 * {
@@ -49,7 +42,7 @@ html, body {
 }
 
 body {
-  font-family: $montserrat;
+  font-family: $helvetica;
   background: $off-white;
 }
 
@@ -58,9 +51,11 @@ a, a:active, a:visited {
   text-decoration: none;
 }
 
+a:hover {
+  color: $red;
+}
+
 .header {
-  font-family: $homizio;
-  font-weight: normal;
   display: block;
   width: 100%;
   background: $white;
@@ -87,6 +82,10 @@ a, a:active, a:visited {
     a {
       padding-bottom: 5px;
       text-transform: uppercase;
+    }
+
+    a:hover {
+      color: $black;
     }
   }
 
@@ -150,7 +149,7 @@ a, a:active, a:visited {
   z-index: 1;
   position: relative;
   padding: $header-height 0 $footer-height+20;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5em;
   width: 100%;
 
