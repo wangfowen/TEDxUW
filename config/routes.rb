@@ -11,12 +11,6 @@ Tedxuw::Application.routes.draw do
   get "/team", to: "main#team"
   get "/contact", to: "main#contact"
 	get '/live', to: 'main#live'
-	constraints :subdomain => 'live' do
-		get '/', to: "main#live"
-	end
-	constraints :subdomain => 'livestream' do
-		get '/', to: "main#live"
-	end
 
   comfy_route :cms_admin, :path => '/admin'
 
