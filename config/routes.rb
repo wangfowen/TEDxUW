@@ -10,6 +10,9 @@ Tedxuw::Application.routes.draw do
   get "/videos", to: "main#videos"
   get "/team", to: "main#team"
   get "/contact", to: "main#contact"
+	get '/', to: 'main#live', constraints: { subdomain: 'live' } 
+	get '/', to: 'main#live', constraints: { subdomain: 'livestream' } 
+	get '/live', to: 'main#live'
 
   comfy_route :cms_admin, :path => '/admin'
 
