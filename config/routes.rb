@@ -11,6 +11,7 @@ Tedxuw::Application.routes.draw do
   get "/team", to: "main#team"
   get "/contact", to: "main#contact"
 	get '/live', to: 'main#live'
+	get '/schedule', to: 'main#schedule'
 
   comfy_route :cms_admin, :path => '/admin'
 

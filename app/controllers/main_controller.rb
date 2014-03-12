@@ -30,6 +30,9 @@ class MainController < ApplicationController
 	def live
 	end
 
+	def schedule
+	end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_main
