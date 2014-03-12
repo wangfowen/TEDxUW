@@ -1,16 +1,18 @@
-.banner= cms_snippet_content('blog-banner')
+%section.wrapper
 
-.main
-  %h1.title Blog
+  .banner= cms_snippet_content('blog-banner')
 
-  .blog
-    - @posts.each do |post|
+  .main
+    %h1.title Blog
 
-      .set
-        %h2= link_to post.title, blog_post_path(@cms_site.path, "", post.slug)
-        .info
-          = "by " + post.author + " on " + post.published_at.strftime("%Y-%m-%d")
-        .content
-          = post.content.html_safe
+    .blog
+      - @posts.each do |post|
 
-    = paginate @posts
+        .set
+          %h2= link_to post.title, blog_post_path(@cms_site.path, "", post.slug)
+          .info
+            = "by " + post.author + " on " + post.published_at.strftime("%Y-%m-%d")
+          .content
+            = post.content.html_safe
+
+      = paginate @posts

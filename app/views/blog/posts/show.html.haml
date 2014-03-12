@@ -1,17 +1,19 @@
-.blog.main
-  %h1= @post.title
+%section.wrapper
 
-  .info
-    = "by " + @post.author + " on " + @post.published_at.strftime("%Y-%m-%d")
-  .content
-    = @post.content.html_safe
+  .blog.main
+    %h1= @post.title
 
--#
-  .comments
-    - @post.comments.published.each do |comment|
-      .comment
-        .author= comment.author
-        .content= comment.content
+    .info
+      = "by " + @post.author + " on " + @post.published_at.strftime("%Y-%m-%d")
+    .content
+      = @post.content.html_safe
 
-    = render :partial => 'blog/comments/form'
+  -#
+    .comments
+      - @post.comments.published.each do |comment|
+        .comment
+          .author= comment.author
+          .content= comment.content
+
+      = render :partial => 'blog/comments/form'
 
